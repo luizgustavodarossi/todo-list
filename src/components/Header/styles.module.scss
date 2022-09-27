@@ -1,10 +1,10 @@
-.header {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--gray-700);
-}
 
-.logo {
-  margin: 72px 0 80px 0;  
+  .logo {
+    margin: 72px 0 80px 0;
+  }
 }

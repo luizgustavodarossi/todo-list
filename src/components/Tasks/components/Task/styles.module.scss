@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 12px;
+
+  background: var(--gray-500);
+
+  border: 1px solid #333333;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+
+  .text {
+    flex: 1;
+  }
+
+  span {
+    padding: 3px;
+  }
+
+  .toDoIcon {
+    color: var(--blue);
+  }
+
+  .doneIcon {
+    color: var(--purple);
+  }
+
+  .doneText {
+    text-decoration-line: line-through;
+    color: var(--gray-300);
+  }
+
+  .trash {
+    color: var(--gray-300);
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+      color: var(--danger);
+    }
+  }
+}
