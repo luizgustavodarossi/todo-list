@@ -32,20 +32,26 @@ export function TasksProvider({ children }: TasksProviderProps) {
   const [tasks, setTasks] = useState<Task[]>([])
 
   useEffect(() => {
+    getTasks()
+  }, [])
+
+  function getTasks() {
     api.get('tasks').then((response) => setTasks(response.data))
-  })
+  }
 
   function createTask(text: Task['text']): void {
-    api.post('tasks', { text, id: uuidv4(), status: 'toDo' })
+    api
+      .post('tasks', { text, id: uuidv4(), status: 'toDo' })
+      .then(() => getTasks())
   }
 
   function toggleStatusTask(id: Task['id'], status: Task['status']): void {
     const task = tasks.find((task) => task.id === id)
-    api.put(`tasks/${id}`, { ...task, status: status })
+    api.put(`tasks/${id}`, { ...task, status: status }).then(() => getTasks())
   }
 
   function deleteTask(id: Task['id']): void {
-    api.delete(`tasks/${id}`)
+    api.delete(`tasks/${id}`).then(() => getTasks())
   }
 
   return (
