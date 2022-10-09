@@ -1,11 +1,11 @@
-import { useTasks } from "../../hooks/useTasks";
+import { useTasks } from '../../hooks/useTasks'
 
-import { AiOutlinePlusCircle } from "react-icons/ai";
-import styles from "./styles.module.scss";
-import { useState } from "react";
+import { AiOutlinePlusCircle } from 'react-icons/ai'
+import styles from './styles.module.scss'
+import { useState } from 'react'
 
 function NewTask() {
-  const { createTask } = useTasks();
+  const { createTask } = useTasks()
   const [text, setText] = useState<string>('')
 
   const handleNewTask = (): void => {
@@ -17,15 +17,15 @@ function NewTask() {
 
   return (
     <div className={styles.container}>
-      <input 
-        type="text" 
-        name="text" 
-        value={text} 
-        onChange={({ target }) => setText(target.value)} 
-        placeholder="Adicione uma nova tarefa" 
+      <input
+        type='text'
+        name='text'
+        value={text}
+        onChange={({ target }) => setText(target.value)}
+        placeholder='Adicione uma nova tarefa'
       />
 
-      <button type="submit" onClick={handleNewTask}>
+      <button type='submit' onClick={handleNewTask}>
         Criar <AiOutlinePlusCircle />
       </button>
     </div>

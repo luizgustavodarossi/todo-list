@@ -1,6 +1,6 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from 'react'
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 interface Task {
   id: string
@@ -9,7 +9,7 @@ interface Task {
 }
 
 interface TasksProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 interface TasksContextData {
@@ -45,14 +45,16 @@ export function TasksProvider({ children }: TasksProviderProps) {
   }
 
   return (
-    <TasksContext.Provider value={{ tasks, createTask, toggleStatusTask, deleteTask }}>
+    <TasksContext.Provider
+      value={{ tasks, createTask, toggleStatusTask, deleteTask }}
+    >
       {children}
     </TasksContext.Provider>
   )
 }
 
 export function useTasks() {
-  const context = useContext(TasksContext);
+  const context = useContext(TasksContext)
 
-  return context;
+  return context
 }

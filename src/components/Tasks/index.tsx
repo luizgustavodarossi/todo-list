@@ -1,9 +1,9 @@
-import { useTasks } from "../../hooks/useTasks";
+import { useTasks } from '../../hooks/useTasks'
 
-import { Info } from "./components/Info";
-import { Task } from "./components/Task";
+import { Info } from './components/Info'
+import { Task } from './components/Task'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 export interface TaskProps {
   id: string
@@ -12,8 +12,8 @@ export interface TaskProps {
 }
 
 function Tasks() {
-  const { tasks } = useTasks();
-  const completedTasks = tasks.filter(t => t.status == 'done').length
+  const { tasks } = useTasks()
+  const completedTasks = tasks.filter((t) => t.status == 'done').length
   const createdTasks = tasks.length
 
   return (

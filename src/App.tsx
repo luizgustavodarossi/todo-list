@@ -1,11 +1,11 @@
-import { Header } from "./components/Header";
-import { NewTask } from "./components/NewTask";
-import { Tasks } from "./components/Tasks";
+import { Header } from './components/Header'
+import { NewTask } from './components/NewTask'
+import { Tasks } from './components/Tasks'
 
-import { TasksProvider } from "./hooks/useTasks";
+import { TasksProvider } from './hooks/useTasks'
 
-import styles from "./App.module.scss";
-import "./global.scss";
+import styles from './App.module.scss'
+import './global.scss'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Tasks />
       </div>
     </TasksProvider>
-  );
-};
+  )
+}
 
-export { App };
+export { App }

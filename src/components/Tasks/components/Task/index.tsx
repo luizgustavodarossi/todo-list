@@ -1,6 +1,6 @@
-import { FaCheckCircle, FaRegCircle, FaRegTrashAlt } from "react-icons/fa"
-import { TaskProps } from "../.."
-import { useTasks } from "../../../../hooks/useTasks"
+import { FaCheckCircle, FaRegCircle, FaRegTrashAlt } from 'react-icons/fa'
+import { TaskProps } from '../..'
+import { useTasks } from '../../../../hooks/useTasks'
 
 import styles from './styles.module.scss'
 
@@ -32,7 +32,7 @@ function Task({ id, text, status }: TaskProps) {
       <span>{checkIcon()}</span>
 
       <div
-        className={`${styles.text} ${(status == 'done' ? styles.doneText : '')}`}
+        className={`${styles.text} ${status == 'done' ? styles.doneText : ''}`}
       >
         {text}
       </div>

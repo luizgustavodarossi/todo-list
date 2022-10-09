@@ -1,5 +1,5 @@
 import logo from '../../assets/logo.svg'
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss'
 
 function Header() {
   return (
@@ -11,4 +11,4 @@ function Header() {
   )
 }
 
-export { Header };
+export { Header }
