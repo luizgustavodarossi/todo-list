@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3000/'
+  baseURL: 'https://todo-list-n3cb-allji7t4d-luizgustavodarossi.vercel.app/'
 })
