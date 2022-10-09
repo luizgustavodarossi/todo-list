@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useTasks } from '../../hooks/useTasks'
 
 import { AiOutlinePlusCircle } from 'react-icons/ai'
