@@ -17,9 +17,17 @@ function NewTask() {
 
   return (
     <div className={styles.container}>
-      <input type="text" name="text" value={text} onChange={({ target }) => setText(target.value)} placeholder="Adicione uma nova tarefa" />
+      <input 
+        type="text" 
+        name="text" 
+        value={text} 
+        onChange={({ target }) => setText(target.value)} 
+        placeholder="Adicione uma nova tarefa" 
+      />
 
-      <button type="submit" onClick={handleNewTask}>Criar <AiOutlinePlusCircle /></button>
+      <button type="submit" onClick={handleNewTask}>
+        Criar <AiOutlinePlusCircle />
+      </button>
     </div>
   )
 }
