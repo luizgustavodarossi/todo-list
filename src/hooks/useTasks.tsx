@@ -1,11 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
-import { api } from '../services/api'
+import { createContext, ReactNode, useContext, useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -31,27 +24,24 @@ const TasksContext = createContext<TasksContextData>({} as TasksContextData)
 export function TasksProvider({ children }: TasksProviderProps) {
   const [tasks, setTasks] = useState<Task[]>([])
 
-  useEffect(() => {
-    getTasks()
-  }, [])
-
-  function getTasks() {
-    api.get('tasks').then((response) => setTasks(response.data))
-  }
-
   function createTask(text: Task['text']): void {
-    api
-      .post('tasks', { text, id: uuidv4(), status: 'toDo' })
-      .then(() => getTasks())
+    setTasks([{ text, id: uuidv4(), status: 'toDo' }, ...tasks])
   }
 
   function toggleStatusTask(id: Task['id'], status: Task['status']): void {
-    const task = tasks.find((task) => task.id === id)
-    api.put(`tasks/${id}`, { ...task, status: status }).then(() => getTasks())
+    const newTasks = tasks.map((task) => {
+      if (task.id != id) return task
+
+      task.status = status
+
+      return task
+    })
+
+    setTasks(newTasks)
   }
 
   function deleteTask(id: Task['id']): void {
-    api.delete(`tasks/${id}`).then(() => getTasks())
+    setTasks(tasks.filter((task) => task.id != id))
   }
 
   return (
